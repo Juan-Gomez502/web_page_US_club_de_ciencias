@@ -1,0 +1,39 @@
+{
+    "Cosquín": [
+        { "rio": "Río Cosquín", "estado": "bueno", "caudal": "normal" },
+        { "rio": "Río San Antonio", "estado": "seco", "caudal": "bajo" }
+    ],
+    "La Falda": [
+        { "rio": "Río La Falda", "estado": "crecido", "caudal": "alto" }
+    ],
+    "La Cumbre": [
+        { "rio": "Río La Cumbre", "estado": "normal", "caudal": "moderado" }
+    ],
+    "Villa Giardino": [
+        { "rio": "Río Villa Giardino", "estado": "bueno", "caudal": "normal" }
+    ],
+    "Capilla del Monte": [
+        { "rio": "Río Capilla del Monte", "estado": "crecido", "caudal": "alto" }
+    ],
+    "San Esteban": [
+        { "rio": "Río San Esteban", "estado": "seco", "caudal": "bajo" }
+    ],
+    "Los Cocos": [
+        { "rio": "Río Los Cocos", "estado": "normal", "caudal": "moderado" }
+    ],
+    "Bialet Massé": [
+        { "rio": "Río Bialet Massé", "estado": "bueno", "caudal": "normal" }
+    ],
+    "Casa Grande": [
+        { "rio": "Río Casa Grande", "estado": "crecido", "caudal": "alto" }
+    ],
+    "San Roque": [
+        { "rio": "Río San Roque", "estado": "normal", "caudal": "moderado" }
+    ],
+    "Valle Hermoso": [
+        { "rio": "Río Valle Hermoso", "estado": "bueno", "caudal": "normal" }
+    ], 
+    "Cosquin": [
+        { "rio": "Río Cosquín", "estado": "bueno", "caudal": "normal" }
+    ]
+    }
