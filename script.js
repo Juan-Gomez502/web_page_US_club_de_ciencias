@@ -1,3 +1,15 @@
+const input = document.getElementById('search-input');
+input.addEventListener('input', function() {
+    const searchTerm = input.value.trim().toLowerCase();
+    const cards = Array.from(document.querySelectorAll('.card-rio'));
+
+    cards.forEach(card => {
+        const textoBusqueda = (card.dataset.busqueda || card.textContent).toLowerCase();
+        const coincide = !searchTerm || textoBusqueda.includes(searchTerm);
+        card.style.display = coincide ? 'block' : 'none';
+    });
+});
+
 fetch('rios.json')
     .then(response => response.json())
     .then(data => {
@@ -43,6 +55,7 @@ function mostrarRios(localidad, data) {
     rios.forEach(rio => {
         const card = document.createElement('div');
         card.className = 'card-rio';
+        card.dataset.busqueda = `${rio.rio} ${rio.estado} ${rio.caudal}`.toLowerCase();
 
         card.innerHTML = `
             <div class="card-header">

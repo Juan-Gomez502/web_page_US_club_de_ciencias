@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ríos</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ríos de Punilla</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Estado de los ríos</h1>
+    <div class="app-shell">
+    <header class="topbar">
+        <div class="brand">
+        <span class="brand-icon">⛰️</span>
+        <span>Ríos de Punilla</span>
+        </div>
+
+        <div class="badge-ra">RA</div>
     </header>
 
-    <nav>
-        <ul id="menu-localidades"></ul>
-    </nav>
+    <section class="hero">
+        <div class="search-wrap">
+        <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input type="text" id="buscador" placeholder="Buscar localidad..." />
+        <button type="button" class="search-btn">⌕</button>
+        </div>
+        </div>
 
-    <main>
-        <div id="contenido-rios"></div>
+        <div class="hero-wave"></div>
+    </section>
+
+    <section class="section-title">
+        <div class="title-left">
+            <span class="pin-icon">◉</span>
+            <span>Todas las localidades de Punilla</span>
+        </div>
+        <span class="mini-wave">≈</span>
+    </section>
+
+    <main class="content">
+        <ul id="menu-localidades" class="localidades-grid"></ul>
     </main>
+    </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
