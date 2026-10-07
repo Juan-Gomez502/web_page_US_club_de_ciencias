@@ -1,8 +1,6 @@
-// 1. Vamos a buscar el archivo rios.json (está en la misma carpeta)
 fetch('rios.json')
-    .then(response => response.json()) // convierte el texto del archivo en un objeto JS
+    .then(response => response.json())
     .then(data => {
-        // A partir de acá "data" es un objeto JS normal
         construirMenu(data);
     })
     .catch(error => {
@@ -11,7 +9,6 @@ fetch('rios.json')
             '<p class="mensaje-inicial">No se pudo cargar la información de los ríos.</p>';
     });
 
-// 2. Arma el menú de localidades a partir de las claves del JSON
 function construirMenu(data) {
     const menu = document.getElementById('menu-localidades');
 
@@ -20,14 +17,11 @@ function construirMenu(data) {
         li.textContent = localidad;
 
         li.addEventListener('click', () => {
-            // saco la clase "activa" de todos los items
             document.querySelectorAll('#menu-localidades li').forEach(item => {
                 item.classList.remove('activa');
             });
 
-            // se la pongo solo al que clickeé
             li.classList.add('activa');
-
             mostrarRios(localidad, data);
         });
 
@@ -35,10 +29,9 @@ function construirMenu(data) {
     });
 }
 
-// 3. Muestra las cards de ríos de la localidad seleccionada
 function mostrarRios(localidad, data) {
     const contenedor = document.getElementById('contenido-rios');
-    contenedor.innerHTML = ''; // limpio lo que había antes
+    contenedor.innerHTML = '';
 
     const rios = data[localidad];
 
@@ -68,7 +61,6 @@ function mostrarRios(localidad, data) {
             </div>
         `;
 
-        // click en el encabezado: expande/colapsa la info
         const header = card.querySelector('.card-header');
         const info = card.querySelector('.card-info');
         const flecha = card.querySelector('.icono-flecha');
@@ -83,7 +75,6 @@ function mostrarRios(localidad, data) {
     });
 }
 
-// 4. Devuelve una clase CSS según el estado del río
 function claseEstado(estado) {
     const valor = estado.toLowerCase();
 

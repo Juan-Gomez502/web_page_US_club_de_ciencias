@@ -5,21 +5,16 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    background: #f3f6f5;
     color: #222;
 }
 
 header {
-    background-color: #1b5e5a;
+    background: #1b5e5a;
     color: white;
-    padding: 24px 16px;
     text-align: center;
-}
-
-header h1 {
-    font-size: 1.6rem;
-    margin-bottom: 6px;
+    padding: 20px 16px;
 }
 
 nav {
@@ -35,100 +30,87 @@ nav {
 }
 
 #menu-localidades li {
-    background-color: #ffffff;
-    border: 1px solid #cfd8d7;
-    padding: 10px 18px;
-    border-radius: 20px;
+    background: white;
+    border: 1px solid #dbe2e0;
+    border-radius: 999px;
+    padding: 10px 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: 0.2s ease;
 }
 
 #menu-localidades li:hover,
 #menu-localidades li.activa {
-    background-color: #1b5e5a;
+    background: #1b5e5a;
     color: white;
 }
 
 main {
-    padding: 16px;
     max-width: 700px;
     margin: 0 auto;
+    padding: 16px;
 }
 
-.mensaje-inicial {
-    text-align: center;
-    color: #666;
+#contenido-rios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .card-rio {
-    background-color: #f1f3f4;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    background: #eff3f2;
+    border: 1px solid #dfe7e6;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .card-header {
-    padding: 12px 16px;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
 }
 
 .card-header-left {
     display: flex;
     align-items: center;
     gap: 12px;
-    min-width: 0; /* permite que el texto largo trunque en vez de desbordar */
 }
 
 .icono-rio {
-    flex-shrink: 0;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #dde3e2;
+    background: #dfe8e6;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
 }
 
 .nombre-rio {
-    font-weight: 500;
-    color: #1a1a1a;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card-header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.resumen-estado {
-    font-size: 0.85rem;
-    color: #5f6368; /* gris tipo "Sin fecha de entrega" */
-}
-
-.icono-flecha {
-    color: #5f6368;
-    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .card-info {
-    padding: 0 16px 14px 60px; /* alineado con el texto del header, no con el ícono */
+    padding: 0 16px 16px 58px;
     font-size: 0.95rem;
 }
 
 .card-info p {
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
-.estado-bueno { color: #1b7a1b; font-weight: bold; }
-.estado-seco { color: #b3541e; font-weight: bold; }
-.estado-crecido { color: #b31e1e; font-weight: bold; }
+.estado-bueno {
+    color: green;
+    font-weight: bold;
+}
+
+.estado-seco {
+    color: orange;
+    font-weight: bold;
+}
+
+.estado-crecido {
+    color: red;
+    font-weight: bold;
+}
