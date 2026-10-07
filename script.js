@@ -1,28 +1,18 @@
-const input = document.getElementById('search-input');
-input.addEventListener('input', function() {
-    const searchTerm = input.value.trim().toLowerCase();
-    const cards = Array.from(document.querySelectorAll('.card-rio'));
-
-    cards.forEach(card => {
-        const textoBusqueda = (card.dataset.busqueda || card.textContent).toLowerCase();
-        const coincide = !searchTerm || textoBusqueda.includes(searchTerm);
-        card.style.display = coincide ? 'block' : 'none';
-    });
-});
+let datosGlobales = {};
 
 fetch('rios.json')
     .then(response => response.json())
     .then(data => {
+        datosGlobales = data;
         construirMenu(data);
     })
     .catch(error => {
         console.error('Error cargando rios.json:', error);
-        document.getElementById('contenido-rios').innerHTML =
-            '<p class="mensaje-inicial">No se pudo cargar la información de los ríos.</p>';
     });
 
 function construirMenu(data) {
     const menu = document.getElementById('menu-localidades');
+    menu.innerHTML = '';
 
     Object.keys(data).forEach(localidad => {
         const li = document.createElement('li');
@@ -89,11 +79,28 @@ function mostrarRios(localidad, data) {
 }
 
 function claseEstado(estado) {
-    const valor = estado.toLowerCase();
+    const valor = (estado || '').toLowerCase();
 
     if (valor === 'bueno') return 'estado-bueno';
     if (valor === 'seco') return 'estado-seco';
     if (valor === 'crecido') return 'estado-crecido';
+    if (valor === 'normal') return 'estado-normal';
 
     return '';
+}
+
+// Filtro de búsqueda
+const input = document.getElementById('buscador');
+if (input) {
+    input.addEventListener('input', function() {
+        const searchTerm = input.value.trim().toLowerCase();
+        const menu = document.getElementById('menu-localidades');
+        const items = menu.querySelectorAll('li');
+
+        items.forEach(item => {
+            const texto = item.textContent.toLowerCase();
+            const coincide = !searchTerm || texto.includes(searchTerm);
+            item.style.display = coincide ? '' : 'none';
+        });
+    });
 }
