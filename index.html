@@ -4,43 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ríos de Punilla</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
-    <div class="app-shell">
+    <div class="app-shell" id="app-shell">
         <header class="topbar">
             <div class="brand">
-                <span class="brand-icon">⛰️</span>
+                <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M5 22 17 7l7 8 5-6 14 13H5Z" />
+                    <path d="m13 14 4 5 4-5M7 30c5 0 5 5 10 5s5-5 10-5 5 5 10 5" />
+                    <path d="M7 39c5 0 5 4 10 4s5-4 10-4 5 4 10 4" />
+                </svg>
                 <span>Ríos de Punilla</span>
             </div>
-            <div class="badge-ra">RA</div>
         </header>
 
         <section class="hero">
             <div class="search-wrap">
                 <div class="search-box">
-                    <span class="search-icon">⌕</span>
-                    <input type="text" id="buscador" placeholder="Buscar localidad..." />
-                    <button type="button" class="search-btn">⌕</button>
+                    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="10.8" cy="10.8" r="6.8" />
+                        <path d="m16 16 5 5" />
+                    </svg>
+                    <input type="text" id="buscador" placeholder="Buscar localidad..." aria-label="Buscar río o localidad" />
+                    <button type="button" class="search-btn" aria-label="Buscar">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="10.8" cy="10.8" r="6.8" />
+                            <path d="m16 16 5 5" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div class="hero-wave"></div>
         </section>
 
         <section class="section-title">
             <div class="title-left">
-                <span class="pin-icon">◉</span>
-                <span>Todas las localidades de Punilla</span>
+                <svg class="pin-icon" viewBox="0 0 24 32" aria-hidden="true">
+                    <path d="M12 1C5.9 1 1 5.9 1 12c0 8.2 11 19 11 19s11-10.8 11-19C23 5.9 18.1 1 12 1Z" />
+                    <circle cx="12" cy="12" r="3.5" />
+                </svg>
+                <div class="title-copy">
+                    <p>Selecciona una localidad para ver información de sus ríos</p>
+                    <h1 id="titulo-seccion">Todas las localidades de Punilla</h1>
+                </div>
             </div>
-            <span class="mini-wave">≈</span>
+            <span class="mini-wave" aria-hidden="true">≈</span>
         </section>
 
         <main class="content">
-            <ul id="menu-localidades" class="localidades-grid"></ul>
             <div id="contenido-rios"></div>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>
