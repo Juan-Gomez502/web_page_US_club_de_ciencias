@@ -75,15 +75,30 @@ function reorganizarTarjetas() {
     );
 }
 
+<<<<<<< HEAD
 function organizarTarjetas(tarjetas, columnas) {
     listaRios.replaceChildren();
+=======
+    rios.forEach(rio => {
+        const card = document.createElement('div');
+        card.className = 'card-rio';
+        card.dataset.busqueda = `${rio.rio} ${rio.estado} ${rio.precauciones}`.toLowerCase();
+>>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
 
     for (let indice = 0; indice < tarjetas.length; indice += columnas) {
         const fila = document.createElement('section');
         fila.className = 'fila-rios';
 
+<<<<<<< HEAD
         const tarjetasFila = document.createElement('div');
         tarjetasFila.className = 'tarjetas-fila';
+=======
+            <div class="card-info" style="display:none;">
+                <p><strong>Estado:</strong> <span class="${claseEstado(rio.estado)}">${rio.estado}</span></p>
+                <p><strong>Precauciones:</strong> ${rio.precauciones}</p>
+            </div>
+        `;
+>>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
 
         const informacion = document.createElement('div');
         informacion.className = 'informacion-rio';
@@ -138,7 +153,14 @@ function seleccionarRio(seleccionada) {
     apartados.className = 'apartados-rio';
     agregarApartado(apartados, 'Estado', rio.estado || 'Sin datos', '≈', claseEstado(rio.estado));
     agregarApartado(apartados, 'Caudal', rio.caudal || 'Sin datos', '▤');
-    agregarApartado(apartados, 'Ubicación', rio.ubicacion || `${localidad}, Punilla - Córdoba`, '⌖');
+    agregarApartado(
+        apartados,
+        'Ubicación',
+        rio.ubicacion || `${localidad}, Punilla - Córdoba`,
+        '⌖',
+        '',
+        crearEnlaceGoogleMaps(rio, localidad)
+    );
     agregarApartado(
         apartados,
         'Seguridad',
@@ -148,7 +170,7 @@ function seleccionarRio(seleccionada) {
     fila.replaceChildren(apartados);
 }
 
-function agregarApartado(contenedor, nombre, valor, icono, clase = '') {
+function agregarApartado(contenedor, nombre, valor, icono, clase = '', url = '') {
     const apartado = document.createElement('article');
     apartado.className = 'apartado-rio';
 
@@ -163,7 +185,36 @@ function agregarApartado(contenedor, nombre, valor, icono, clase = '') {
     texto.textContent = valor;
 
     apartado.append(encabezado, texto);
+
+    if (url) {
+        const enlaceMapa = document.createElement('a');
+        enlaceMapa.className = 'enlace-mapa';
+        enlaceMapa.href = url;
+        enlaceMapa.target = '_blank';
+        enlaceMapa.rel = 'noopener noreferrer';
+        enlaceMapa.textContent = 'Abrir en Google Maps';
+        apartado.appendChild(enlaceMapa);
+    }
+
     contenedor.appendChild(apartado);
+}
+
+function crearEnlaceGoogleMaps(rio, localidad) {
+    const coordenadas = rio.coordenadas;
+    const tieneCoordenadasValidas =
+        coordenadas &&
+        Number.isFinite(coordenadas.lat) &&
+        Number.isFinite(coordenadas.lng) &&
+        coordenadas.lat >= -90 &&
+        coordenadas.lat <= 90 &&
+        coordenadas.lng >= -180 &&
+        coordenadas.lng <= 180;
+    const consulta = tieneCoordenadasValidas
+        ? `${coordenadas.lat},${coordenadas.lng}`
+        : `${rio.rio}, ${localidad}, Punilla, Córdoba`;
+    const parametros = new URLSearchParams({ api: '1', query: consulta });
+
+    return `https://www.google.com/maps/search/?${parametros}`;
 }
 
 function claseEstado(estado) {
@@ -180,6 +231,7 @@ buscador.addEventListener('input', () => {
     listaRios.querySelectorAll('.card-rio').forEach(tarjeta => {
         tarjeta.hidden = !tarjeta.dataset.busqueda.includes(termino);
     });
+<<<<<<< HEAD
 
     if (rioAbierto && rioAbierto.hidden) {
         seleccionarRio(rioAbierto);
@@ -189,3 +241,6 @@ buscador.addEventListener('input', () => {
         fila.hidden = !fila.querySelector('.card-rio:not([hidden])');
     });
 });
+=======
+}
+>>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
