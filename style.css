@@ -260,15 +260,6 @@ body {
   text-align: left;
 }
 
-.imagen-localidad {
-  width: 82px;
-  height: 52px;
-  flex: 0 0 auto;
-  border-radius: 12px;
-  object-fit: cover;
-  object-position: center;
-}
-
 .nombres-localidad {
   min-width: 0;
   flex: 1;

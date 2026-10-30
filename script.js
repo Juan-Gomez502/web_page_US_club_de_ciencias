@@ -31,12 +31,6 @@ function mostrarRios(datos) {
             boton.className = 'card-rio-titulo';
             boton.setAttribute('aria-expanded', 'false');
 
-            const imagen = document.createElement('img');
-            imagen.className = 'imagen-localidad';
-            imagen.src = 'img/rio.jpg';
-            imagen.alt = '';
-            imagen.loading = 'lazy';
-
             const nombres = document.createElement('span');
             nombres.className = 'nombres-localidad';
             const nombre = document.createElement('span');
@@ -52,7 +46,7 @@ function mostrarRios(datos) {
             flecha.className = 'flecha-rio';
             flecha.textContent = '⌄';
             flecha.setAttribute('aria-hidden', 'true');
-            boton.append(imagen, nombres, flecha);
+            boton.append(nombres, flecha);
             boton.addEventListener('click', () => seleccionarRio(tarjeta));
 
             tarjeta.appendChild(boton);
