@@ -1,576 +1,90 @@
 {
-    "Bialet Massé": [
-        {
-            "localidad": "Bialet Massé",
-            "rio": "Río Cosquín",
-            "precauciones": "Evitar ingresar durante crecientes y tener cuidado con las corrientes.",
-            "estado": "Sin análisis de calidad actual confirmado para todo el tramo."
-        },
-        {
-            "localidad": "Bialet Massé",
-            "rio": "Balneario Municipal",
-            "precauciones": "Cuidado con los pozos profundos y las piedras resbaladizas.",
-            "estado": "Sin medición puntual reciente publicada."
-        }
-    ],
-    "Cabalango": [
-        {
-            "localidad": "Cabalango",
-            "rio": "Río Los Chorrillos",
-            "precauciones": "Cuidado con las ollas, piedras y saltos naturales.",
-            "estado": "Caudal variable según las lluvias; sin análisis actual puntual."
-        }
-    ],
-    "Capilla del Monte": [
-        {
-            "localidad": "Capilla del Monte",
-            "rio": "Río Calabalumba",
-            "precauciones": "Precaución con cascadas, piedras y pozos profundos.",
-            "estado": "Sin análisis actual confirmado."
-        },
-        {
-            "localidad": "Capilla del Monte",
-            "rio": "Balnearios del río Calabalumba",
-            "precauciones": "No saltar en zonas de profundidad desconocida.",
-            "estado": "Sin medición puntual reciente."
-        }
-    ],
-    "Casa Grande": [
-        {
-            "localidad": "Casa Grande",
-            "rio": "Arroyos serranos de la localidad",
-            "precauciones": "Evitar cauces durante tormentas y crecientes.",
-            "estado": "Sin información actual específica confirmada."
-        }
-    ],
-    "Charbonier": [
-        {
-            "localidad": "Charbonier",
-            "rio": "Cursos de agua serranos",
-            "precauciones": "No cruzar arroyos cuando aumenta el caudal.",
-            "estado": "Sin análisis actual confirmado."
-        }
-    ],
     "Cosquín": [
         {
-            "localidad": "Cosquín",
-            "rio": "Río Cosquín",
-            "precauciones": "Evitar ingresar durante lluvias intensas y crecientes.",
-            "estado": "Registró una creciente importante durante octubre de 2026."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Río Yuspe",
-            "precauciones": "Precaución con las corrientes y las piedras.",
-            "estado": "Sin medición actual puntual confirmada."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Río San Francisco",
-            "precauciones": "Evitar acercarse a la unión de los ríos durante crecientes.",
-            "estado": "Forma parte de la cuenca que alimenta el río Cosquín."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Azud Nivelador",
-            "precauciones": "Respetar las zonas delimitadas y evitar estructuras hidráulicas.",
-            "estado": "Sin análisis puntual reciente publicado."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Juntura de los Ríos",
-            "precauciones": "Cuidado con las corrientes de la unión de los ríos San Francisco y Yuspe.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario La Toma",
-            "precauciones": "Precaución con las profundidades y las piedras.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Onofre Marimón",
-            "precauciones": "Evitar ingresar después de lluvias fuertes.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Pozo de los Patos",
-            "precauciones": "Cuidado con los pozos y cambios de profundidad.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Quinta Bouquet",
-            "precauciones": "Evitar las corrientes fuertes.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Santa Teresita",
-            "precauciones": "Vigilar a los menores y respetar las indicaciones de seguridad.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Cosquín",
-            "rio": "Balneario Uranga",
-            "precauciones": "Cuidado con las corrientes y las zonas profundas.",
-            "estado": "Sin medición puntual reciente."
-        }
-    ],
-    "Cuesta Blanca": [
-        {
-            "localidad": "Cuesta Blanca",
-            "rio": "Río San Antonio",
-            "precauciones": "No ingresar durante crecientes ni después de tormentas.",
-            "estado": "Caudal variable; se registraron crecientes recientes en la cuenca."
-        }
-    ],
-    "Estancia Vieja": [
-        {
-            "localidad": "Estancia Vieja",
-            "rio": "Cursos menores de la cuenca del lago San Roque",
-            "precauciones": "Evitar los cauces durante tormentas.",
-            "estado": "Sin evaluación actual específica."
-        }
-    ],
-    "Huerta Grande": [
-        {
-            "localidad": "Huerta Grande",
-            "rio": "Río San Francisco o Grande de Punilla",
-            "precauciones": "Cuidado con las corrientes, piedras y cambios de profundidad.",
-            "estado": "Sin análisis actual de todo el curso."
-        },
-        {
-            "localidad": "Huerta Grande",
-            "rio": "Balneario Pekos Bill",
-            "precauciones": "Respetar las zonas habilitadas y tener cuidado con los sectores profundos.",
-            "estado": "Sin medición puntual reciente."
-        }
-    ],
-    "La Cumbre": [
-        {
-            "localidad": "La Cumbre",
-            "rio": "Río San Jerónimo",
-            "precauciones": "Precaución con las piedras y los cambios de profundidad.",
-            "estado": "Sin análisis actual confirmado."
-        },
-        {
-            "localidad": "La Cumbre",
-            "rio": "Río Pinto",
-            "precauciones": "Evitar ingresar durante crecientes y tormentas.",
-            "estado": "Sin medición actual específica."
-        },
-        {
-            "localidad": "La Cumbre",
-            "rio": "Balneario El Chorrito",
-            "precauciones": "Cuidado con las piedras y los sectores de profundidad variable.",
-            "estado": "Sin análisis puntual reciente."
+        "localidad": "Cosquín",
+        "rio": "Río Cosquín",
+        "estado": "bueno",
+        "caudal": "normal"
         }
     ],
     "La Falda": [
         {
-            "localidad": "La Falda",
-            "rio": "Río Grande de Punilla",
-            "precauciones": "Evitar sectores de corriente fuerte y descargas de agua.",
-            "estado": "Caudal variable; sin evaluación actual específica de todo el río."
-        },
-        {
-            "localidad": "La Falda",
-            "rio": "Cursos de agua de la zona de Siete Cascadas",
-            "precauciones": "No acercarse a las cascadas ni a las zonas de descarga.",
-            "estado": "Sin análisis puntual reciente."
+        "localidad": "La Falda",
+        "rio": "Río La Falda",
+        "estado": "crecido",
+        "caudal": "alto"
         }
     ],
-    "Los Cocos": [
+    "La Cumbre": [
         {
-            "localidad": "Los Cocos",
-            "rio": "Arroyos serranos",
-            "precauciones": "No ingresar durante tormentas y evitar zonas sin señalización.",
-            "estado": "Sin información actual confirmada."
-        }
-    ],
-    "Mayu Sumaj": [
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Río San Antonio",
-            "precauciones": "Cuidado con las corrientes y los sectores profundos.",
-            "estado": "Caudal variable; crecientes recientes en la cuenca."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario La Bomba",
-            "precauciones": "Tener cuidado con la profundidad porque posee sectores utilizados para natación.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario El Playón",
-            "precauciones": "Evitar ingresar durante crecientes.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario La Cascada",
-            "precauciones": "Precaución con la olla profunda y el salto de agua.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario Los Cajones",
-            "precauciones": "Cuidado con las piedras y los cambios de profundidad.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario Playa de las Sierras",
-            "precauciones": "Evitar el ingreso durante lluvias intensas.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Mayu Sumaj",
-            "rio": "Balneario Pozo de López",
-            "precauciones": "No saltar sin conocer la profundidad.",
-            "estado": "Sin análisis puntual reciente."
-        }
-    ],
-    "Pampa de Olaen": [
-        {
-            "localidad": "Pampa de Olaen",
-            "rio": "Arroyos y cursos serranos de Olaen",
-            "precauciones": "Evitar cauces durante tormentas y crecientes.",
-            "estado": "Sin medición actual confirmada."
-        }
-    ],
-    "Paraje Dolores": [
-        {
-            "localidad": "Paraje Dolores",
-            "rio": "Cursos de agua de la zona de Dolores",
-            "precauciones": "No cruzar cauces crecidos.",
-            "estado": "Sin información actual específica."
-        }
-    ],
-    "Paraje Pintos": [
-        {
-            "localidad": "Paraje Pintos",
-            "rio": "Cursos serranos de la zona",
-            "precauciones": "Precaución con las crecientes repentinas.",
-            "estado": "Sin información actual específica."
-        }
-    ],
-    "Paraje Tiu Mayu": [
-        {
-            "localidad": "Paraje Tiu Mayu",
-            "rio": "Arroyos serranos",
-            "precauciones": "Evitar ingresar durante tormentas.",
-            "estado": "Sin análisis actual confirmado."
-        }
-    ],
-    "Piedras Grandes": [
-        {
-            "localidad": "Piedras Grandes",
-            "rio": "Arroyos y cursos serranos",
-            "precauciones": "Cuidado con las piedras resbaladizas y las crecientes.",
-            "estado": "Sin medición actual confirmada."
-        }
-    ],
-    "Puesto Pedernera": [
-        {
-            "localidad": "Puesto Pedernera",
-            "rio": "Cursos de agua menores de la zona",
-            "precauciones": "Evitar cruzar arroyos durante lluvias.",
-            "estado": "Sin información actual confirmada."
-        }
-    ],
-    "Puesto Ramallo": [
-        {
-            "localidad": "Puesto Ramallo",
-            "rio": "Cursos de agua menores de la zona",
-            "precauciones": "No acercarse a los cauces durante tormentas.",
-            "estado": "Sin información actual confirmada."
-        }
-    ],
-    "San Antonio de Arredondo": [
-        {
-            "localidad": "San Antonio de Arredondo",
-            "rio": "Río San Antonio",
-            "precauciones": "Evitar ingresar cuando el agua baja con mucha fuerza.",
-            "estado": "Caudal variable; crecientes recientes."
-        },
-        {
-            "localidad": "San Antonio de Arredondo",
-            "rio": "Arroyo Las Jarillas",
-            "precauciones": "Cuidado con las corrientes y los pozos profundos.",
-            "estado": "Sin medición actual específica."
-        }
-    ],
-    "San Esteban": [
-        {
-            "localidad": "San Esteban",
-            "rio": "Río Dolores",
-            "precauciones": "Precaución con las piedras y los cambios de profundidad.",
-            "estado": "Sin análisis actual confirmado."
-        },
-        {
-            "localidad": "San Esteban",
-            "rio": "Balneario Municipal",
-            "precauciones": "Evitar ingresar después de lluvias fuertes.",
-            "estado": "Sin medición puntual reciente."
-        }
-    ],
-    "San José": [
-        {
-            "localidad": "San José",
-            "rio": "Cursos serranos de la zona",
-            "precauciones": "Evitar los cauces durante tormentas.",
-            "estado": "Sin información actual confirmada."
-        }
-    ],
-    "San Roque": [
-        {
-            "localidad": "San Roque",
-            "rio": "Lago San Roque y sus afluentes",
-            "precauciones": "Evitar bañarse en sectores no habilitados y respetar las advertencias sanitarias.",
-            "estado": "Presenta problemas ambientales de eutrofización y proliferación de algas."
-        }
-    ],
-    "Santa María de Punilla": [
-        {
-            "localidad": "Santa María de Punilla",
-            "rio": "Río Cosquín",
-            "precauciones": "Cuidado con las corrientes y las crecientes.",
-            "estado": "Caudal variable; se registraron crecientes recientes."
-        },
-        {
-            "localidad": "Santa María de Punilla",
-            "rio": "Balneario Municipal / Balneario del Centro",
-            "precauciones": "Vigilar a los menores y evitar zonas profundas.",
-            "estado": "Sin análisis puntual reciente."
-        }
-    ],
-    "Tanti": [
-        {
-            "localidad": "Tanti",
-            "rio": "Arroyo Tanti",
-            "precauciones": "Cuidado con las corrientes, cascadas y pozos profundos.",
-            "estado": "Caudal variable según las precipitaciones."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario El Diquecito",
-            "precauciones": "Precaución con el piletón y las piedras.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario El Remanso",
-            "precauciones": "Evitar sectores profundos y corrientes fuertes.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario La Isla",
-            "precauciones": "Cuidado con las piedras y los cambios de profundidad.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario La Olla",
-            "precauciones": "No saltar sin conocer la profundidad.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario Los Árboles",
-            "precauciones": "Evitar ingresar durante crecientes.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario Los Sauces",
-            "precauciones": "Cuidado con los sectores profundos.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario Sans Souci",
-            "precauciones": "Vigilar a los menores y respetar las zonas habilitadas.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario Villa Douma",
-            "precauciones": "Cuidado con las piedras resbaladizas.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Tanti",
-            "rio": "Balneario Villa García",
-            "precauciones": "Evitar las corrientes fuertes.",
-            "estado": "Sin análisis puntual reciente."
-        }
-    ],
-    "Valle Hermoso": [
-        {
-            "localidad": "Valle Hermoso",
-            "rio": "Río San Francisco o Grande de Punilla",
-            "precauciones": "Evitar ingresar durante lluvias intensas.",
-            "estado": "Caudal variable; sin análisis actual de todo el río."
-        },
-        {
-            "localidad": "Valle Hermoso",
-            "rio": "Balneario La Castellana",
-            "precauciones": "Precaución con las piedras y las zonas profundas.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Valle Hermoso",
-            "rio": "Balneario Villa Yacoana",
-            "precauciones": "Evitar ingresar durante crecientes.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Valle Hermoso",
-            "rio": "Balneario Dique La Isla",
-            "precauciones": "No acercarse a las descargas de agua.",
-            "estado": "Condiciones variables según el nivel del agua."
-        }
-    ],
-    "Villa Río Icho Cruz": [
-        {
-            "localidad": "Villa Río Icho Cruz",
-            "rio": "Río San Antonio",
-            "precauciones": "Evitar sectores de corriente fuerte y pozos desconocidos.",
-            "estado": "Caudal variable; crecientes recientes en la cuenca."
-        }
-    ],
-    "Villa Carlos Paz": [
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Río San Antonio",
-            "precauciones": "No ingresar durante crecientes ni después de tormentas fuertes.",
-            "estado": "Se registraron crecientes en octubre de 2026."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Arroyo Los Chorrillos",
-            "precauciones": "Precaución con las piedras y las corrientes.",
-            "estado": "Sin análisis actual específico."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario El Fantasio",
-            "precauciones": "Cuidado con las corrientes y los pozos profundos.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario La Hoya",
-            "precauciones": "No saltar en sectores desconocidos.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario La Curva",
-            "precauciones": "Evitar ingresar durante crecientes.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Playas de Oro – Sector Norte",
-            "precauciones": "Vigilar a los menores y respetar las indicaciones.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Playas de Oro – Sector Sur",
-            "precauciones": "Cuidado con los cambios de profundidad.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Playas de Oro – Sector de Mesas y Bancos",
-            "precauciones": "No ingresar en sectores no habilitados.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Sol y Río – Sector Norte",
-            "precauciones": "Cuidado con las corrientes y las piedras.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Sol y Río – Sector Sur",
-            "precauciones": "Evitar ingresar después de lluvias fuertes.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Ruta Sol",
-            "precauciones": "Respetar las zonas habilitadas y tener cuidado con las profundidades.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Solares de las Ensenadas",
-            "precauciones": "Evitar sectores profundos y corrientes fuertes.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Carlos Paz",
-            "rio": "Balneario Tortuguitas",
-            "precauciones": "Vigilar a los menores y evitar zonas no habilitadas.",
-            "estado": "Sin medición puntual reciente."
+        "localidad": "La Cumbre",
+        "rio": "Río La Cumbre",
+        "estado": "normal",
+        "caudal": "moderado"
         }
     ],
     "Villa Giardino": [
         {
-            "localidad": "Villa Giardino",
-            "rio": "Río Grande de Punilla y arroyos serranos",
-            "precauciones": "Precaución con las crecientes y las piedras.",
-            "estado": "Caudal variable; sin análisis actual de todos los cursos."
-        },
-        {
-            "localidad": "Villa Giardino",
-            "rio": "Balneario Los Quimbaletes",
-            "precauciones": "Cuidado con los pozos y las superficies resbaladizas.",
-            "estado": "Sin medición puntual reciente."
-        },
-        {
-            "localidad": "Villa Giardino",
-            "rio": "Balneario y Camping El Portecelo",
-            "precauciones": "Respetar las indicaciones y evitar ingresar durante crecientes.",
-            "estado": "Sin análisis puntual reciente."
+        "localidad": "Villa Giardino",
+        "rio": "Río Villa Giardino",
+        "estado": "bueno",
+        "caudal": "normal"
         }
     ],
-    "Villa Parque Síquiman": [
+    "Capilla del Monte": [
         {
-            "localidad": "Villa Parque Síquiman",
-            "rio": "Cursos de agua de la cuenca del lago San Roque",
-            "precauciones": "Evitar los cauces durante lluvias fuertes.",
-            "estado": "Sin medición actual específica."
-        },
-        {
-            "localidad": "Villa Parque Síquiman",
-            "rio": "Balneario La Olla",
-            "precauciones": "Cuidado con las profundidades y las piedras.",
-            "estado": "Sin análisis puntual reciente."
-        },
-        {
-            "localidad": "Villa Parque Síquiman",
-            "rio": "Balneario Natural La Toma",
-            "precauciones": "Evitar ingresar durante tormentas y crecientes.",
-            "estado": "Sin medición puntual reciente."
+        "localidad": "Capilla del Monte",
+        "rio": "Río Capilla del Monte",
+        "estado": "crecido",
+        "caudal": "alto"
         }
     ],
-    "Villa Santa Cruz del Lago": [
+    "San Esteban": [
         {
-            "localidad": "Villa Santa Cruz del Lago",
-            "rio": "Arroyos y cursos menores de la cuenca del San Roque",
-            "precauciones": "Evitar cauces durante tormentas y respetar las señalizaciones.",
-            "estado": "Sin análisis actual confirmado."
+        "localidad": "San Esteban",
+        "rio": "Río San Esteban",
+        "estado": "seco",
+        "caudal": "bajo"
+        }
+    ],
+    "Los Cocos": [
+        {
+        "localidad": "Los Cocos",
+        "rio": "Río Los Cocos",
+        "estado": "normal",
+        "caudal": "moderado"
+        }
+    ],
+    "Bialet Massé": [
+        {
+        "localidad": "Bialet Massé",
+        "rio": "Río Bialet Massé",
+        "estado": "bueno",
+        "caudal": "normal"
+        }
+    ],
+    "Casa Grande": [
+        {
+        "localidad": "Casa Grande",
+        "rio": "Río Casa Grande",
+        "estado": "crecido",
+        "caudal": "alto"
+        }
+    ],
+    "San Roque": [
+    {
+        "localidad": "San Roque",
+        "rio": "Río San Roque",
+        "estado": "normal",
+        "caudal": "moderado"
+    }
+    ],
+    "Valle Hermoso": [
+        {
+        "localidad": "Valle Hermoso",
+        "rio": "Río Valle Hermoso",
+        "estado": "bueno",
+        "caudal": "normal"
         }
     ]
 }
