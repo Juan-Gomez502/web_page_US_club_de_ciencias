@@ -45,7 +45,7 @@ function mostrarRios(localidad, data) {
     rios.forEach(rio => {
         const card = document.createElement('div');
         card.className = 'card-rio';
-        card.dataset.busqueda = `${rio.rio} ${rio.estado} ${rio.caudal}`.toLowerCase();
+        card.dataset.busqueda = `${rio.rio} ${rio.estado} ${rio.precauciones}`.toLowerCase();
 
         card.innerHTML = `
             <div class="card-header">
@@ -60,7 +60,7 @@ function mostrarRios(localidad, data) {
 
             <div class="card-info" style="display:none;">
                 <p><strong>Estado:</strong> <span class="${claseEstado(rio.estado)}">${rio.estado}</span></p>
-                <p><strong>Caudal:</strong> ${rio.caudal}</p>
+                <p><strong>Precauciones:</strong> ${rio.precauciones}</p>
             </div>
         `;
 
