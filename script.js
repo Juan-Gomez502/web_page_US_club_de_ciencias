@@ -5,12 +5,12 @@ let rioAbierto = null;
 let columnasActuales = obtenerCantidadColumnas();
 
 fetch('rios.json')
-    .then(response => {
+    .then((response) => {
         if (!response.ok) throw new Error(`Error ${response.status} al cargar rios.json`);
         return response.json();
     })
     .then(mostrarRios)
-    .catch(error => {
+    .catch((error) => {
         console.error('No se pudieron cargar los ríos:', error);
         listaRios.innerHTML = '<p class="mensaje-error">No se pudieron cargar los ríos.</p>';
     });
@@ -19,7 +19,7 @@ function mostrarRios(datos) {
     const tarjetas = [];
 
     Object.entries(datos).forEach(([localidad, rios]) => {
-        rios.forEach(rio => {
+        rios.forEach((rio) => {
             const tarjeta = document.createElement('article');
             tarjeta.className = 'card-rio';
             const nombreLocalidad = rio.localidad || localidad;
@@ -33,6 +33,7 @@ function mostrarRios(datos) {
 
             const nombres = document.createElement('span');
             nombres.className = 'nombres-localidad';
+
             const nombre = document.createElement('span');
             nombre.className = 'nombre-localidad';
             nombre.textContent = nombreLocalidad;
@@ -46,6 +47,7 @@ function mostrarRios(datos) {
             flecha.className = 'flecha-rio';
             flecha.textContent = '⌄';
             flecha.setAttribute('aria-hidden', 'true');
+
             boton.append(nombres, flecha);
             boton.addEventListener('click', () => seleccionarRio(tarjeta));
 
@@ -69,36 +71,26 @@ function reorganizarTarjetas() {
     if (columnas === columnasActuales) return;
 
     columnasActuales = columnas;
-    organizarTarjetas(
-        Array.from(listaRios.querySelectorAll('.card-rio')),
-        columnas
-    );
+    organizarTarjetas(Array.from(listaRios.querySelectorAll('.card-rio')), columnas);
 }
 
-<<<<<<< HEAD
 function organizarTarjetas(tarjetas, columnas) {
     listaRios.replaceChildren();
-=======
-    rios.forEach(rio => {
-        const card = document.createElement('div');
-        card.className = 'card-rio';
-        card.dataset.busqueda = `${rio.rio} ${rio.estado} ${rio.precauciones}`.toLowerCase();
->>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
+
+    if (tarjetas.length === 0) {
+        const mensaje = document.createElement('p');
+        mensaje.className = 'mensaje-inicial';
+        mensaje.textContent = 'No hay ríos para mostrar en este momento.';
+        listaRios.appendChild(mensaje);
+        return;
+    }
 
     for (let indice = 0; indice < tarjetas.length; indice += columnas) {
         const fila = document.createElement('section');
         fila.className = 'fila-rios';
 
-<<<<<<< HEAD
         const tarjetasFila = document.createElement('div');
         tarjetasFila.className = 'tarjetas-fila';
-=======
-            <div class="card-info" style="display:none;">
-                <p><strong>Estado:</strong> <span class="${claseEstado(rio.estado)}">${rio.estado}</span></p>
-                <p><strong>Precauciones:</strong> ${rio.precauciones}</p>
-            </div>
-        `;
->>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
 
         const informacion = document.createElement('div');
         informacion.className = 'informacion-rio';
@@ -110,7 +102,7 @@ function organizarTarjetas(tarjetas, columnas) {
         contenidoInformacion.className = 'informacion-rio-contenido';
         informacion.appendChild(contenidoInformacion);
 
-        tarjetas.slice(indice, indice + columnas).forEach(tarjeta => {
+        tarjetas.slice(indice, indice + columnas).forEach((tarjeta) => {
             tarjeta.querySelector('.card-rio-titulo').setAttribute('aria-controls', informacion.id);
             tarjetasFila.appendChild(tarjeta);
         });
@@ -131,18 +123,25 @@ function seleccionarRio(seleccionada) {
     rioAbierto = rioAbierto === seleccionada ? null : seleccionada;
     const filaAbierta = rioAbierto ? rioAbierto.closest('.fila-rios') : null;
 
-    listaRios.querySelectorAll('.fila-rios').forEach(fila => {
+    listaRios.querySelectorAll('.fila-rios').forEach((fila) => {
         const activa = fila === filaAbierta;
         const informacion = fila.querySelector('.informacion-rio');
         fila.classList.toggle('seleccionada', activa);
-        informacion.setAttribute('aria-hidden', String(!activa));
-        informacion.toggleAttribute('inert', !activa);
+
+        if (informacion) {
+            informacion.setAttribute('aria-hidden', String(!activa));
+            informacion.toggleAttribute('inert', !activa);
+        }
     });
 
-    listaRios.querySelectorAll('.card-rio').forEach(tarjeta => {
+    listaRios.querySelectorAll('.card-rio').forEach((tarjeta) => {
         const activa = tarjeta === rioAbierto;
         tarjeta.classList.toggle('seleccionada', activa);
-        tarjeta.querySelector('.card-rio-titulo').setAttribute('aria-expanded', String(activa));
+
+        const boton = tarjeta.querySelector('.card-rio-titulo');
+        if (boton) {
+            boton.setAttribute('aria-expanded', String(activa));
+        }
     });
 
     if (!rioAbierto) return;
@@ -151,8 +150,9 @@ function seleccionarRio(seleccionada) {
     const { rio, localidad } = datosPorTarjeta.get(rioAbierto);
     const apartados = document.createElement('div');
     apartados.className = 'apartados-rio';
+
     agregarApartado(apartados, 'Estado', rio.estado || 'Sin datos', '≈', claseEstado(rio.estado));
-    agregarApartado(apartados, 'Caudal', rio.caudal || 'Sin datos', '▤');
+    agregarApartado(apartados, 'Caudal', rio.caudal || 'Sin medición disponible', '▤');
     agregarApartado(
         apartados,
         'Ubicación',
@@ -164,9 +164,10 @@ function seleccionarRio(seleccionada) {
     agregarApartado(
         apartados,
         'Seguridad',
-        rio.recomendacion || 'Consultá las condiciones antes de ingresar al agua.',
+        rio.precauciones || rio.recomendacion || 'Consultá las condiciones antes de ingresar al agua.',
         '△'
     );
+
     fila.replaceChildren(apartados);
 }
 
@@ -209,6 +210,7 @@ function crearEnlaceGoogleMaps(rio, localidad) {
         coordenadas.lat <= 90 &&
         coordenadas.lng >= -180 &&
         coordenadas.lng <= 180;
+
     const consulta = tieneCoordenadasValidas
         ? `${coordenadas.lat},${coordenadas.lng}`
         : `${rio.rio}, ${localidad}, Punilla, Córdoba`;
@@ -218,29 +220,29 @@ function crearEnlaceGoogleMaps(rio, localidad) {
 }
 
 function claseEstado(estado) {
-    return {
-        bueno: 'estado-bueno',
-        normal: 'estado-normal',
-        seco: 'estado-seco',
-        crecido: 'estado-crecido'
-    }[(estado || '').toLowerCase()] || '';
+    const valor = (estado || '').toLowerCase();
+
+    if (valor.includes('bueno')) return 'estado-bueno';
+    if (valor.includes('normal')) return 'estado-normal';
+    if (valor.includes('seco') || valor.includes('bajo')) return 'estado-seco';
+    if (valor.includes('crecido') || valor.includes('alto')) return 'estado-crecido';
+
+    return '';
 }
 
 buscador.addEventListener('input', () => {
     const termino = buscador.value.trim().toLowerCase();
-    listaRios.querySelectorAll('.card-rio').forEach(tarjeta => {
-        tarjeta.hidden = !tarjeta.dataset.busqueda.includes(termino);
+
+    listaRios.querySelectorAll('.card-rio').forEach((tarjeta) => {
+        const coincide = tarjeta.dataset.busqueda.includes(termino);
+        tarjeta.hidden = !coincide;
     });
-<<<<<<< HEAD
 
     if (rioAbierto && rioAbierto.hidden) {
         seleccionarRio(rioAbierto);
     }
 
-    listaRios.querySelectorAll('.fila-rios').forEach(fila => {
+    listaRios.querySelectorAll('.fila-rios').forEach((fila) => {
         fila.hidden = !fila.querySelector('.card-rio:not([hidden])');
     });
 });
-=======
-}
->>>>>>> 51f9e4bd973bffb2b054b859ab7fc30a0f5a4c95
