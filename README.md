@@ -3,7 +3,7 @@ Un repositorio para resolver la historia de usuario de: Yo turista necesito info
 
 ## Ubicación de los ríos en Google Maps
 
-Cada tarjeta incluye un enlace a Google Maps. Mientras no haya coordenadas, el enlace busca el río y su localidad. Cuando se conozca el punto exacto, agregá `coordenadas` al objeto del río en `rios.json`:
+Cada ficha de río incluye un enlace a Google Maps. Mientras no haya coordenadas, el enlace busca el río y su localidad. Cuando se conozca el punto exacto, agregá `coordenadas` al objeto del río en `rios.json`:
 
 ```json
 "coordenadas": {

@@ -199,23 +199,13 @@ body {
 }
 
 #contenido-rios {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.fila-rios {
-  display: grid;
-  gap: 0;
-}
-
-.tarjetas-fila {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
   gap: 10px 12px;
 }
 
+.card-localidad,
 .card-rio {
   min-width: 0;
   overflow: hidden;
@@ -226,26 +216,31 @@ body {
   transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
+.card-localidad:hover,
 .card-rio:hover {
   transform: translateY(-1px);
   border-color: #9dcdf2;
   box-shadow: 0 5px 12px #21659a20;
 }
 
+.card-localidad.seleccionada,
 .card-rio.seleccionada {
   border-color: #68aad7;
   box-shadow: 0 5px 14px #21659a20;
 }
 
+.card-localidad.seleccionada:hover,
 .card-rio.seleccionada:hover {
   transform: none;
 }
 
+.card-localidad[hidden],
 .card-rio[hidden],
 [hidden] {
   display: none !important;
 }
 
+.card-localidad-titulo,
 .card-rio-titulo {
   width: 100%;
   min-height: 62px;
@@ -258,6 +253,10 @@ body {
   color: var(--azul);
   cursor: pointer;
   text-align: left;
+}
+
+.card-localidad-titulo {
+  padding-left: 14px;
 }
 
 .nombres-localidad {
@@ -278,20 +277,69 @@ body {
   text-overflow: ellipsis;
 }
 
-.nombre-rio {
-  overflow: hidden;
+.resumen-localidad {
   color: #74899c;
   font-size: 0.76rem;
+}
+
+.nombre-rio {
+  overflow: hidden;
+  flex: 1;
+  color: #1767b5;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.flecha-localidad,
 .flecha-rio {
   color: #1767b5;
   font-size: 1.8rem;
   line-height: 1;
   transform: rotate(0deg);
   transition: transform 220ms ease;
+}
+
+.rios-localidad {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 280ms ease, margin-top 280ms ease, opacity 180ms ease;
+}
+
+.card-localidad.seleccionada .rios-localidad {
+  margin-top: 8px;
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.rios-localidad-contenido {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 1px solid #d4eafd;
+}
+
+.tarjetas-rios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 8px;
+}
+
+.card-rio {
+  border-radius: 12px;
+  background: #f8fcff;
+  box-shadow: none;
+}
+
+.card-rio:hover {
+  box-shadow: 0 3px 8px #21659a18;
+}
+
+.card-rio-titulo {
+  min-height: 48px;
+  padding: 5px 10px;
 }
 
 .informacion-rio {
@@ -301,12 +349,8 @@ body {
   transition: grid-template-rows 280ms ease, margin-top 280ms ease, opacity 180ms ease;
 }
 
-.card-rio.seleccionada .flecha-rio {
-  transform: rotate(180deg);
-}
-
-.fila-rios.seleccionada .informacion-rio {
-  margin-top: 10px;
+.card-rio.seleccionada .informacion-rio {
+  margin-top: 6px;
   grid-template-rows: 1fr;
   opacity: 1;
 }
@@ -315,23 +359,27 @@ body {
   min-height: 0;
   overflow: hidden;
   border: 1px solid #d4eafd;
-  border-radius: 14px;
+  border-radius: 10px;
   background: #ffffffcf;
-  box-shadow: 0 3px 8px #21659a12;
+}
+
+.card-localidad.seleccionada .flecha-localidad,
+.card-rio.seleccionada .flecha-rio {
+  transform: rotate(180deg);
 }
 
 .apartados-rio {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  padding: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 8px;
 }
 
 .apartado-rio {
-  min-height: 112px;
-  padding: 12px;
+  min-height: 0;
+  padding: 9px;
   border: 1px solid var(--borde);
-  border-radius: 12px;
+  border-radius: 10px;
   background: #f8fcff;
 }
 
@@ -368,6 +416,7 @@ body {
   outline-offset: 3px;
 }
 
+.card-localidad-titulo:focus-visible,
 .card-rio-titulo:focus-visible {
   outline: 3px solid #81c6f2;
   outline-offset: -3px;
@@ -411,10 +460,6 @@ body {
 
 @media (max-width: 760px) {
   #contenido-rios {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .tarjetas-fila {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -469,7 +514,7 @@ body {
     padding: 8px;
   }
 
-  .tarjetas-fila {
+  #contenido-rios {
     grid-template-columns: 1fr;
     gap: 8px;
   }
@@ -478,11 +523,16 @@ body {
     width: 90%;
   }
 
-  .card-rio-titulo {
+  .card-localidad-titulo {
     min-height: 60px;
   }
 
+  .tarjetas-rios {
+    gap: 7px;
+    padding: 7px;
+  }
+
   .apartados-rio {
-    padding: 8px;
+    grid-template-columns: 1fr;
   }
 }
