@@ -199,6 +199,16 @@ body {
 }
 
 #contenido-rios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fila-localidades {
+  display: grid;
+}
+
+.tarjetas-fila {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
@@ -227,6 +237,11 @@ body {
 .card-rio.seleccionada {
   border-color: #68aad7;
   box-shadow: 0 5px 14px #21659a20;
+}
+
+.card-localidad.seleccionada {
+  border: 2px solid #1767b5;
+  background: #e9f4fd;
 }
 
 .card-localidad.seleccionada:hover,
@@ -302,22 +317,25 @@ body {
 }
 
 .rios-localidad {
+  min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
   transition: grid-template-rows 280ms ease, margin-top 280ms ease, opacity 180ms ease;
 }
 
-.card-localidad.seleccionada .rios-localidad {
+.rios-localidad.abierto {
   margin-top: 8px;
   grid-template-rows: 1fr;
   opacity: 1;
+  border: 2px solid #1767b5;
+  border-radius: 14px;
+  background: #fff;
 }
 
 .rios-localidad-contenido {
   min-height: 0;
   overflow: hidden;
-  border-top: 1px solid #d4eafd;
 }
 
 .tarjetas-rios {
@@ -459,7 +477,7 @@ body {
 }
 
 @media (max-width: 760px) {
-  #contenido-rios {
+  .tarjetas-fila {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -514,7 +532,7 @@ body {
     padding: 8px;
   }
 
-  #contenido-rios {
+  .tarjetas-fila {
     grid-template-columns: 1fr;
     gap: 8px;
   }

@@ -1,6 +1,7 @@
 const listaRios = document.getElementById('contenido-rios');
 const buscador = document.getElementById('buscador');
 const datosPorTarjeta = new WeakMap();
+const panelesPorLocalidad = new WeakMap();
 const localidadesAnteriores = [
     'Cosquín',
     'La Falda',
@@ -16,6 +17,7 @@ const localidadesAnteriores = [
 ];
 let localidadAbierta = null;
 let rioAbierto = null;
+let columnasActuales = obtenerCantidadColumnas();
 
 fetch('rios.json')
     .then((response) => {
@@ -31,10 +33,64 @@ fetch('rios.json')
 function mostrarRios(datos) {
     listaRios.replaceChildren();
 
-    localidadesAnteriores.forEach((localidad, indice) => {
+    const localidades = [
+        ...localidadesAnteriores.filter((localidad) => Object.prototype.hasOwnProperty.call(datos, localidad)),
+        ...Object.keys(datos).filter((localidad) => !localidadesAnteriores.includes(localidad))
+    ];
+
+    const tarjetas = localidades.map((localidad, indice) => {
         const rios = Array.isArray(datos[localidad]) ? datos[localidad] : [];
-        listaRios.appendChild(crearTarjetaLocalidad(localidad, rios, indice));
+        return crearTarjetaLocalidad(localidad, rios, indice);
     });
+
+    columnasActuales = obtenerCantidadColumnas();
+    organizarLocalidades(tarjetas, columnasActuales);
+    window.addEventListener('resize', reorganizarLocalidades);
+}
+
+function obtenerCantidadColumnas() {
+    if (window.matchMedia('(max-width: 520px)').matches) return 1;
+    if (window.matchMedia('(max-width: 760px)').matches) return 2;
+    return 3;
+}
+
+function reorganizarLocalidades() {
+    const columnas = obtenerCantidadColumnas();
+    if (columnas === columnasActuales) return;
+
+    columnasActuales = columnas;
+    organizarLocalidades(Array.from(listaRios.querySelectorAll('.card-localidad')), columnas);
+}
+
+function organizarLocalidades(tarjetas, columnas) {
+    listaRios.replaceChildren();
+
+    tarjetas.forEach((tarjeta) => {
+        const panel = panelesPorLocalidad.get(tarjeta);
+        panel.classList.remove('abierto');
+        panel.setAttribute('aria-hidden', 'true');
+        panel.setAttribute('inert', '');
+        tarjeta.appendChild(panel);
+    });
+
+    for (let indice = 0; indice < tarjetas.length; indice += columnas) {
+        const fila = document.createElement('section');
+        fila.className = 'fila-localidades';
+
+        const tarjetasFila = document.createElement('div');
+        tarjetasFila.className = 'tarjetas-fila';
+
+        tarjetas.slice(indice, indice + columnas).forEach((tarjeta) => {
+            tarjetasFila.appendChild(tarjeta);
+        });
+
+        fila.appendChild(tarjetasFila);
+        listaRios.appendChild(fila);
+    }
+
+    if (localidadAbierta && listaRios.contains(localidadAbierta)) {
+        actualizarPanelLocalidad(localidadAbierta, true);
+    }
 }
 
 function crearTarjetaLocalidad(localidad, rios, indiceLocalidad) {
@@ -70,6 +126,7 @@ function crearTarjetaLocalidad(localidad, rios, indiceLocalidad) {
     panelRios.id = `rios-localidad-${indiceLocalidad}`;
     panelRios.setAttribute('aria-hidden', 'true');
     panelRios.setAttribute('inert', '');
+    panelesPorLocalidad.set(tarjeta, panelRios);
 
     const contenidoRios = document.createElement('div');
     contenidoRios.className = 'rios-localidad-contenido';
@@ -137,6 +194,7 @@ function crearFlecha() {
 }
 
 function seleccionarLocalidad(seleccionada) {
+    if (localidadAbierta) actualizarPanelLocalidad(localidadAbierta, false);
     localidadAbierta = localidadAbierta === seleccionada ? null : seleccionada;
     rioAbierto = null;
 
@@ -144,13 +202,23 @@ function seleccionarLocalidad(seleccionada) {
         const activa = tarjeta === localidadAbierta;
         tarjeta.classList.toggle('seleccionada', activa);
         tarjeta.querySelector('.card-localidad-titulo').setAttribute('aria-expanded', String(activa));
-
-        const panel = tarjeta.querySelector('.rios-localidad');
-        panel.setAttribute('aria-hidden', String(!activa));
-        panel.toggleAttribute('inert', !activa);
     });
 
+    if (localidadAbierta) actualizarPanelLocalidad(localidadAbierta, true);
     listaRios.querySelectorAll('.card-rio').forEach((tarjeta) => actualizarEstadoRio(tarjeta, false));
+}
+
+function actualizarPanelLocalidad(tarjeta, abierto) {
+    const panel = panelesPorLocalidad.get(tarjeta);
+    panel.classList.toggle('abierto', abierto);
+    panel.setAttribute('aria-hidden', String(!abierto));
+    panel.toggleAttribute('inert', !abierto);
+
+    if (abierto) {
+        tarjeta.closest('.fila-localidades').appendChild(panel);
+    } else {
+        tarjeta.appendChild(panel);
+    }
 }
 
 function seleccionarRio(seleccionada) {
@@ -260,6 +328,7 @@ function claseEstado(estado) {
 
 buscador.addEventListener('input', () => {
     const termino = buscador.value.trim().toLowerCase();
+    if (localidadAbierta) actualizarPanelLocalidad(localidadAbierta, false);
     localidadAbierta = null;
     rioAbierto = null;
 
@@ -277,8 +346,12 @@ buscador.addEventListener('input', () => {
         tarjeta.classList.remove('seleccionada');
         tarjeta.querySelector('.card-localidad-titulo').setAttribute('aria-expanded', 'false');
 
-        const panel = tarjeta.querySelector('.rios-localidad');
+        const panel = panelesPorLocalidad.get(tarjeta);
         panel.setAttribute('aria-hidden', 'true');
         panel.setAttribute('inert', '');
+    });
+
+    listaRios.querySelectorAll('.fila-localidades').forEach((fila) => {
+        fila.hidden = !fila.querySelector('.card-localidad:not([hidden])');
     });
 });
