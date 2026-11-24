@@ -247,8 +247,8 @@ function mostrarInformacionRio(tarjeta) {
     const apartados = document.createElement('div');
     apartados.className = 'apartados-rio';
 
+    agregarRecomendacionesRio(apartados);
     agregarApartado(apartados, 'Estado', rio.estado || 'Sin datos', '≈', claseEstado(rio.estado));
-    agregarApartado(apartados, 'Caudal', rio.caudal || 'Sin medición disponible', '▤');
     agregarApartado(
         apartados,
         'Ubicación',
@@ -265,6 +265,61 @@ function mostrarInformacionRio(tarjeta) {
     );
 
     informacion.replaceChildren(apartados);
+}
+
+function agregarRecomendacionesRio(contenedor) {
+    const recomendaciones = document.createElement('article');
+    recomendaciones.className = 'recomendaciones-rio';
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = 'IMPORTANTE';
+    recomendaciones.appendChild(titulo);
+
+    const introduccion = document.createElement('p');
+    introduccion.textContent =
+        'Nuestros ríos son mucho más que lugares para disfrutar de un día al aire libre: son ecosistemas llenos de vida, parte fundamental de nuestro ambiente y un patrimonio natural que debemos proteger.';
+    recomendaciones.appendChild(introduccion);
+
+    const invitacion = document.createElement('p');
+    invitacion.textContent =
+        'Queremos que disfrutes de tu visita, pero también que seas parte de su conservación. Por eso, te invitamos a tener en cuenta algunas recomendaciones:';
+    recomendaciones.appendChild(invitacion);
+
+    const lista = document.createElement('ul');
+    [
+        ['No dejes basura:', ' llevate todos tus residuos, incluso los más pequeños.'],
+        ['Cuidá el agua:', ' evitá arrojar productos, jabones o sustancias que puedan contaminarla.'],
+        ['Respetá la flora y la fauna:', ' no arranques plantas, no dañes la vegetación ni molestes a los animales que puedan llegar a ver en el balneario.'],
+        ['Evitá hacer fuego', ' en lugares no habilitados y respetá las indicaciones de cada zona.'],
+        ['No alteres el entorno:', ' evitá romper piedras, modificar cauces o dañar el paisaje natural.'],
+        ['Respetá los espacios:', ' dejá el lugar tal como te gustaría encontrarlo.']
+    ].forEach(([destacado, texto]) => {
+        const elemento = document.createElement('li');
+        const strong = document.createElement('strong');
+        strong.textContent = destacado;
+        elemento.append(strong, document.createTextNode(texto));
+        lista.appendChild(elemento);
+    });
+    recomendaciones.appendChild(lista);
+
+    const cierre = document.createElement('p');
+    const cierreDestacado = document.createElement('strong');
+    cierreDestacado.textContent = 'Un río limpio y saludable depende de todos nosotros.';
+    cierre.appendChild(cierreDestacado);
+    recomendaciones.appendChild(cierre);
+
+    const despedida = document.createElement('p');
+    despedida.textContent =
+        'Disfrutá, explorá y conectá con la naturaleza, pero recordá que somos visitantes de un ecosistema que merece nuestro respeto.';
+    recomendaciones.appendChild(despedida);
+
+    const mensajeFinal = document.createElement('p');
+    const mensajeDestacado = document.createElement('strong');
+    mensajeDestacado.textContent = ' Tu visita deja recuerdos, no residuos. ¡Cuidemos juntos los ríos de Punilla!';
+    mensajeFinal.appendChild(mensajeDestacado);
+    recomendaciones.appendChild(mensajeFinal);
+
+    contenedor.appendChild(recomendaciones);
 }
 
 function agregarApartado(contenedor, nombre, valor, icono, clase = '', url = '') {

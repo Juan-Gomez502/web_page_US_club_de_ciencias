@@ -393,6 +393,41 @@ body {
   padding: 8px;
 }
 
+.recomendaciones-rio {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: #f8fcff;
+  color: #456b89;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.recomendaciones-rio h3 {
+  margin-bottom: 8px;
+  color: var(--azul);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.recomendaciones-rio p + p {
+  margin-top: 9px;
+}
+
+.recomendaciones-rio ul {
+  margin: 9px 0;
+  padding-left: 22px;
+}
+
+.recomendaciones-rio li + li {
+  margin-top: 5px;
+}
+
+.recomendaciones-rio strong {
+  color: var(--azul);
+}
+
 .apartado-rio {
   min-height: 0;
   padding: 9px;
