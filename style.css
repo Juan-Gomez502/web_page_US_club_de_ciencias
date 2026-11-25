@@ -11,7 +11,6 @@
 }
 
 body {
-  min-width: 320px;
   background: #f7fbfe;
   color: var(--texto);
   font-family: "Segoe UI", Tahoma, sans-serif;
@@ -146,6 +145,7 @@ body {
 }
 
 .title-left {
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -166,6 +166,7 @@ body {
   margin-bottom: 1px;
   color: #727d86;
   font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  overflow-wrap: anywhere;
 }
 
 .title-copy h1 {
@@ -174,6 +175,7 @@ body {
   font-size: clamp(1.1rem, 2.2vw, 1.45rem);
   font-weight: 700;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .mini-wave {
@@ -402,6 +404,7 @@ body {
   color: #456b89;
   font-size: 0.88rem;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .recomendaciones-rio h3 {
@@ -452,6 +455,7 @@ body {
   color: #456b89;
   font-size: 0.88rem;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .enlace-mapa {
@@ -587,5 +591,30 @@ body {
 
   .apartados-rio {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-title {
+    padding-inline: 10px;
+  }
+
+  .title-left {
+    gap: 10px;
+  }
+
+  .pin-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .mini-wave {
+    width: 32px;
+    height: 32px;
+    font-size: 1.25rem;
+  }
+
+  .content {
+    padding-inline: 6px;
   }
 }
